@@ -1,0 +1,9 @@
+@import '../../scss/base/variables';
+
+.weather-box {
+  display: flex;
+  flex-direction: column;
+  padding: $padding-base;
+  border: 1px solid gray;
+  border-radius: $padding-base;
+}

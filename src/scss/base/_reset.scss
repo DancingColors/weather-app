@@ -1,6 +1,11 @@
 html {
   box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
 *,
 *:before,
 *:after {
@@ -13,7 +18,9 @@ html {
 
 body {
   background: $color-primary;
-  font: 16px/1.428 $text-color-primary;
+  font-size: $text-size-base;
+  line-height: $text-line-height-base;
+  color: $text-color-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

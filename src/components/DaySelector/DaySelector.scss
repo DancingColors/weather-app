@@ -1,0 +1,12 @@
+@import '../../scss/base/variables';
+
+.day-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  max-width: 100vw;
+  &-item {
+    padding: $padding-base;
+  }
+}
