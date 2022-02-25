@@ -6,6 +6,15 @@ export function getDisplayDate(date: string) {
     return 'today';
   } else if (date === dayjs(today).add(1, 'day').format('YYYY-MM-DD')) {
     return 'tomorrow';
+  } else if (date === dayjs(today).subtract(1, 'day').format('YYYY-MM-DD')) {
+    return 'yesterday';
   }
   return dayjs(date).format('dd DD MMM');
+}
+
+export function getDisplayTemp(temp: number) {
+  return ~~temp + '°';
+}
+export function getDisplayKnotsFromMiles(mph: number) {
+  return (mph % 1.15078).toFixed(2);
 }

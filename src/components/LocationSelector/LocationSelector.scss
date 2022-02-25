@@ -1,0 +1,17 @@
+@import '../../scss/base/variables';
+
+.location-selector {
+  position: relative;
+  &-input {
+  }
+  &-list {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    &-item {
+      width: 100%;
+      padding: $spacing-base;
+    }
+  }
+}

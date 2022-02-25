@@ -16,7 +16,7 @@ function DaySelector(props: DaySelectorProps) {
     }
   };
   return (
-    <div className="day-selector">
+    <section className="day-selector">
       {props.forecastDaysData?.length
         ? props.forecastDaysData.map((dayData) => (
             <div
@@ -37,7 +37,7 @@ function DaySelector(props: DaySelectorProps) {
             </div>
           ))
         : null}
-    </div>
+    </section>
   );
 }
 

@@ -3,8 +3,16 @@ html {
 }
 
 body {
+  position: fixed; // For simple layouts only!
+  width: 100vw; // For simple layouts only!
   margin: 0;
   padding: 0;
+  background: $color-primary;
+  font-size: $text-size-base;
+  line-height: $text-line-height-base;
+  color: $text-color-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 *,
 *:before,
@@ -16,13 +24,11 @@ body {
   max-height: 1000000px;
 }
 
-body {
-  background: $color-primary;
-  font-size: $text-size-base;
-  line-height: $text-line-height-base;
-  color: $text-color-primary;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 img {

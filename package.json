@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "format": "prettier --write './**/*.{ts,tsx,scss,md,json}' --config ./.prettierrc",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -57,5 +57,6 @@
     "eslint-plugin-react": "^7.28.0",
     "prettier": "^2.5.1",
     "sass": "^1.49.8"
-  }
+  },
+  "proxy": "https://www.metaweather.com"
 }

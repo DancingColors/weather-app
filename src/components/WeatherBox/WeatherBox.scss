@@ -3,7 +3,7 @@
 .weather-box {
   display: flex;
   flex-direction: column;
-  padding: $padding-base;
+  padding: $spacing-base;
   border: 1px solid gray;
-  border-radius: $padding-base;
+  border-radius: $spacing-base;
 }

@@ -1,4 +1,8 @@
-import { getDisplayDate } from '../../helpers/displayData';
+import {
+  getDisplayDate,
+  getDisplayKnotsFromMiles,
+  getDisplayTemp
+} from '../../helpers/displayData';
 import { ForecastDay } from '../../types/forecast';
 import './WeatherBox.scss';
 
@@ -8,7 +12,7 @@ type WeatherBoxProps = {
 
 function WeatherBox(props: WeatherBoxProps) {
   return (
-    <div className="weather-box">
+    <section className="weather-box">
       {props.forecastDay ? (
         <div className="weather-box-data-wrapper">
           <img
@@ -28,15 +32,18 @@ function WeatherBox(props: WeatherBoxProps) {
             {getDisplayTemp(props.forecastDay.min_temp)} /{' '}
             {getDisplayTemp(props.forecastDay.max_temp)}
           </div>
+          <div className="weather-box-humidity">{props.forecastDay.humidity}%</div>
+          <div className="weather-box-wind">
+            <div className="weather-box-wind-compass">{props.forecastDay.wind_direction}</div>
+            <div className="weather-box-wind-speed">
+              {getDisplayKnotsFromMiles(props.forecastDay.wind_speed)}kn
+            </div>
+          </div>
           <div className="weather-box-name">{props.forecastDay.weather_state_name}</div>
         </div>
       ) : null}
-    </div>
+    </section>
   );
 }
 
-function getDisplayTemp(rawTemp: number) {
-  const displayTemp = rawTemp.toString();
-  return displayTemp.slice(0, displayTemp.indexOf('.') + 2) + '°';
-}
 export default WeatherBox;

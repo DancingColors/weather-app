@@ -1,7 +1,17 @@
 export interface ForecastDay {
   id: number;
-  weather_state_abbr: string;
-  weather_state_name: 'Heavy Rain' | 'Showers' | 'Heavy Cloud' | 'Light Cloud' | 'Clear';
+  weather_state_abbr: 'sn' | 'sl' | 'h' | 't' | 'hr' | 'lr' | 's' | 'hc' | 'lc' | 'c';
+  weather_state_name:
+    | 'Snow'
+    | 'Sleet'
+    | 'Hail'
+    | 'Thunderstorm'
+    | 'Heavy Rain'
+    | 'Light Rain'
+    | 'Showers'
+    | 'Heavy Cloud'
+    | 'Light Cloud'
+    | 'Clear';
   wind_direction_compass: 'N' | 'NE' | 'E' | 'SE' | 'S' | 'SW' | 'W' | 'NW';
   created: string;
   applicable_date: string;
@@ -29,16 +39,18 @@ export interface Forecast {
   sun_rise: string;
   sun_set: string;
   timezone_name: 'LMT' | 'GTM';
-  parent: {
-    title: string;
-    location_type: string;
-    woeid: number;
-    latt_long: string;
-  };
+  parent: ForecastLocation;
   sources: ForecastSource[];
   title: string;
   location_type: string;
   woeid: number;
   latt_long: string;
   timezone: string;
+}
+
+export interface ForecastLocation {
+  title: string;
+  location_type: string;
+  woeid: number;
+  latt_long: string;
 }
