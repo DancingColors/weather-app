@@ -1,10 +1,46 @@
+// Colors
+$color-gray: #494855;
+$color-lightgray: lighten($color-gray, 35%);
+$color-white: #ffffff;
+$color-black: #000000;
+$color-transparent: rgba(0, 0, 0, 0);
+
 // Spacing
 $spacing-base: 16px;
+$spacing-small: 8px;
 
 // Text
-$text-size-base: 16px;
-$text-line-height-base: 1.428;
-$text-color-primary: #000000;
-$text-color-secondary: #ffffff;
+$text-font-regular-family: 'Pompiere', sans-serif;
 
-$color-primary: #ffffff;
+$text-size-base: 18px;
+$text-size-large: 32px;
+$text-size-medium: 24px;
+$text-size-small: 12px;
+
+$text-line-height-base: 1.428;
+
+$text-color-dark: #000000;
+$text-color-light: #ffffff;
+
+// Borders
+$border-radius-medium: 6px;
+$border-radius-small: 2px;
+
+$color-sky-day: #00aaff;
+$color-cloud-day: #ffffff;
+$color-cloud-shadow-day: lighten($color-sky-day, 40%);
+$color-mountain-day: #46a55d;
+
+$color-cloud-dark: darken($color-lightgray, 10%);
+$color-cloud-shadow-dark: darken($color-lightgray, 20%);
+$color-mountain-dark: desaturate(darken($color-mountain-day, 20%), 20%);
+
+$color-sky-mist: darken($color-lightgray, 20%);
+$color-mountain-snow: $color-cloud-shadow-day;
+
+// Transitions
+$easing-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+// Gradients
+$gradient-day: linear-gradient($color-sky-day 0, lighten($color-sky-day, 50%) 80%);
+$gradient-mist: linear-gradient($color-sky-mist 0, transparentize($color-sky-mist, 0.4) 100%);

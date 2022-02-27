@@ -3,17 +3,19 @@ html {
 }
 
 body {
-  position: fixed; // For simple layouts only!
-  width: 100vw; // For simple layouts only!
+  position: fixed;
+  width: 100vw;
   margin: 0;
   padding: 0;
-  background: $color-primary;
+  background: $color-gray;
+  font-family: $text-font-regular-family;
   font-size: $text-size-base;
   line-height: $text-line-height-base;
-  color: $text-color-primary;
+  color: $text-color-dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 *,
 *:before,
 *:after {
@@ -22,6 +24,18 @@ body {
 
 * {
   max-height: 1000000px;
+}
+
+input {
+  font-family: $text-font-regular-family;
+  font-size: $text-size-large;
+}
+a {
+  color: $text-color-light;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 ul,

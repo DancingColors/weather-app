@@ -9,11 +9,12 @@ import './App.scss';
 
 function App() {
   const [currentWoeid, setCurrentWoeid] = useState<number>(638242);
-  const [currentForecast, setCurrentForecast] = useState<Forecast | null>(null);
-  const [currentDate, setCurrentDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));
+  const [currentForecast, setCurrentForecast] = useState<Forecast | null>();
+  const [currentDate, setCurrentDate] = useState<string | undefined>(dayjs().format('YYYY-MM-DD'));
 
   useEffect(() => {
     const fetchForecast = async () => {
+      setCurrentForecast(null);
       await fetch(`/api/location/${currentWoeid}/`, {
         headers: {
           'Content-Type': 'application/json'
@@ -21,6 +22,7 @@ function App() {
       })
         .then((res) =>
           res.json().then((result) => {
+            setCurrentDate(dayjs().format('YYYY-MM-DD'));
             setCurrentForecast(result);
           })
         )
@@ -31,32 +33,31 @@ function App() {
     fetchForecast();
   }, [currentWoeid]);
 
-  return currentForecast ? (
+  return (
     <div className="App">
-      <header>
-        <h2>{currentForecast.title}</h2>
-        <h3>{currentForecast.location_type}</h3>
-        <h4>{currentForecast.parent.title}</h4>
-      </header>
-      <LocationSelector onSetLocation={setCurrentWoeid} />
-      <WeatherBox
-        forecastDay={currentForecast.consolidated_weather.find(
-          (cw) => cw.applicable_date === currentDate
-        )}
-      />
-      <DaySelector
-        forecastDaysData={currentForecast.consolidated_weather}
-        setDate={setCurrentDate}
-      />
-      <footer>
-        <p>
-          Powered by{' '}
-          <a href="https://www.metaweather.com" target="_blank" rel="noreferrer">
-            MetaWeather.com
-          </a>
-        </p>
-      </footer>
+      <div className="App-content">
+        <header>
+          <h1>KFR challenge Weather app</h1>
+        </header>
+        <span>Location</span>
+        <LocationSelector onSetLocation={setCurrentWoeid} />
+        <WeatherBox forecast={currentForecast} date={currentDate} />
+        <span>Forecast</span>
+        <DaySelector
+          currentDate={currentDate}
+          forecastDaysData={currentForecast?.consolidated_weather}
+          setDate={setCurrentDate}
+        />
+        <footer>
+          <p>
+            Powered by{' '}
+            <a href="https://www.metaweather.com" target="_blank" rel="noreferrer">
+              MetaWeather.com
+            </a>
+          </p>
+        </footer>
+      </div>
     </div>
-  ) : null;
+  );
 }
 export default App;

@@ -1,0 +1,32 @@
+@mixin mountains {
+  .mountains {
+    > div {
+      $diameter: 200%;
+      width: $diameter;
+      height: $diameter;
+      bottom: 0 - $diameter * 0.8;
+      left: 0 - $diameter * 0.4;
+      border-radius: 50%;
+      background-color: $color-mountain-day;
+      box-shadow: inset 40px 20px 15px 0 lighten($color-mountain-day, 15%);
+      transition: all 0.3s $easing-bounce;
+      &:first-child {
+        & + div {
+          $diameter: 160%;
+          width: $diameter;
+          height: $diameter;
+          bottom: 0 - $diameter * 0.9;
+          left: 0 - $diameter * 0.5;
+          & + div {
+            $diameter: 120%;
+            width: $diameter;
+            height: $diameter;
+            bottom: 0 - $diameter * 0.7;
+            right: 0 - $diameter * 0.6;
+            left: auto;
+          }
+        }
+      }
+    }
+  }
+}

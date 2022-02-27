@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-export function getDisplayDate(date: string) {
+export function getDisplayDate(date: string, format: string = 'dd DD MMM') {
   const today = dayjs().format('YYYY-MM-DD');
   if (date === today) {
     return 'today';
@@ -9,12 +9,13 @@ export function getDisplayDate(date: string) {
   } else if (date === dayjs(today).subtract(1, 'day').format('YYYY-MM-DD')) {
     return 'yesterday';
   }
-  return dayjs(date).format('dd DD MMM');
+  return dayjs(date).format(format);
 }
 
 export function getDisplayTemp(temp: number) {
-  return ~~temp + '°';
+  return ~~temp;
 }
+
 export function getDisplayKnotsFromMiles(mph: number) {
   return (mph % 1.15078).toFixed(2);
 }

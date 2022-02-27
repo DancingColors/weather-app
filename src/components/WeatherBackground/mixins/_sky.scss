@@ -1,0 +1,25 @@
+@mixin sky {
+  .sky {
+    .stars {
+      background-image: radial-gradient(2px 2px at 20px 30px, #eee, $color-transparent),
+        radial-gradient(2px 2px at 40px 70px, #fff, $color-transparent),
+        radial-gradient(2px 2px at 50px 160px, #ccc, $color-transparent),
+        radial-gradient(2px 2px at 90px 40px, #fff, $color-transparent),
+        radial-gradient(2px 2px at 130px 80px, #eee, $color-transparent),
+        radial-gradient(2px 2px at 160px 120px, #ddd, $color-transparent);
+      background-size: 100px 100px;
+      background-position: center;
+      background-repeat: repeat;
+      opacity: 0;
+    }
+
+    &.day {
+      background-image: $gradient-day;
+    }
+
+    .mist {
+      background-image: $gradient-mist;
+      opacity: 1;
+    }
+  }
+}

@@ -38,26 +38,29 @@ function LocationSelector(props: LocationSelectorProps) {
 
   return (
     <section className="location-selector">
-      <input
-        type="text"
-        autoFocus
-        className="location-selector-input"
-        placeholder="Type a location"
-        ref={inputRef}
-        onChange={handleTextChange}
-      />
-      {locations.length > 0 && (
-        <ul className="location-selector-list">
-          {locations.map((location) => (
-            <li
-              key={location.woeid}
-              className="location-selector-list-item"
-              onClick={() => changeLocation(location)}>
-              {location.title}
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className="text-input">
+        <input
+          type="text"
+          name="location"
+          autoFocus
+          className="location-selector-input"
+          placeholder="Search location"
+          ref={inputRef}
+          onChange={handleTextChange}
+        />
+        {locations.length > 0 && (
+          <ul className="text-input-list">
+            {locations.map((location) => (
+              <li
+                key={location.woeid}
+                className="text-input-list-item"
+                onClick={() => changeLocation(location)}>
+                {location.title}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </section>
   );
 }
