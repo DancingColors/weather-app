@@ -1,0 +1,24 @@
+@mixin rain {
+  .rain {
+    opacity: 0;
+    > div {
+      width: 3px;
+      height: 60px;
+      border-radius: 50%;
+      background-image: linear-gradient(
+        transparent 0,
+        desaturate(lighten($color-sky-day, 20%), 70%) 100%
+      );
+      position: absolute;
+      top: -60px;
+    }
+
+    @for $i from 1 through 20 {
+      > div:nth-child(#{$i}) {
+        left: #{random(360)}px;
+        animation: rainfall #{1 + random(10) * 0.01}s linear infinite;
+        animation-delay: -#{random(20)}s;
+      }
+    }
+  }
+}

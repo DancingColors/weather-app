@@ -1,0 +1,52 @@
+@import '../../scss/base/variables';
+
+.location-selector {
+  position: relative;
+  margin-bottom: 5vh;
+  z-index: 100;
+  .text-input {
+    margin: $spacing-base 0;
+    input {
+      width: 280px;
+      padding: $spacing-small;
+      font-size: $text-size-base;
+      color: $text-color-light;
+      border: $border-radius-small solid transparentize($color-white, 0.5);
+      border-radius: $border-radius-medium;
+      background-color: darken($color-gray, 20%);
+      outline: none;
+      &::placeholder {
+        font-family: $text-font-regular-family;
+        font-size: $text-size-base;
+      }
+
+      &:focus {
+        background-color: $color-gray;
+        border-color: $color-white;
+      }
+    }
+    &-list {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      margin-top: -$border-radius-medium;
+      background-color: lighten($color-gray, 30%);
+      border: $border-radius-small solid $color-white;
+      border-top: none;
+      border-bottom-left-radius: $border-radius-medium;
+      border-bottom-right-radius: $border-radius-medium;
+      overflow: hidden;
+      &-item {
+        width: 100%;
+        padding: $spacing-base;
+        color: $text-color-light;
+        cursor: pointer;
+        transition: color 0.2s, background-color 0.2s;
+        &:hover {
+          color: $text-color-light;
+          background-color: $text-color-dark;
+        }
+      }
+    }
+  }
+}

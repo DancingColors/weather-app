@@ -1,0 +1,29 @@
+@mixin snow {
+  .snow {
+    opacity: 0;
+    > div {
+      width: var(--size);
+      height: var(--size);
+      background: $color-white;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+    }
+
+    @for $i from 1 through 20 {
+      > div:nth-child(#{$i}) {
+        --size: #{random(8) + 5}px;
+        --snow-left-ini: #{random(360) - 100}px;
+        --snow-left-end: #{random(360) - 100}px;
+        left: #{random(100)}px;
+        animation: snowfall #{5 + random(10)}s linear infinite;
+        animation-delay: -#{random(10)}s;
+      }
+    }
+
+    /* added small blur every 6 snowflakes*/
+    > div:nth-child(6n) {
+      filter: blur(1px);
+    }
+  }
+}

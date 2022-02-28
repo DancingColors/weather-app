@@ -1,0 +1,36 @@
+@import '../../scss/base/variables';
+
+.App {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-gray;
+  &-content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    > header {
+      text-align: center;
+      margin-bottom: 2vh;
+      h1 {
+        margin: 0;
+        color: $color-white;
+        text-shadow: 0 0 10px transparentize($text-color-dark, 0.2);
+        letter-spacing: 2px;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .loading {
+    color: $color-white;
+  }
+}

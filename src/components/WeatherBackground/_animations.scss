@@ -1,0 +1,47 @@
+@keyframes rainfall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(370px);
+  }
+}
+
+@keyframes hailfall {
+  0% {
+    transform: translate(0);
+  }
+  80% {
+    transform: translate(0, 370px);
+  }
+  100% {
+    transform: translate(20px, 300px);
+  }
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(var(--snow-left-ini), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--snow-left-end), 370px, 0);
+  }
+}
+
+@keyframes lightning {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
