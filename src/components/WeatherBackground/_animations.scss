@@ -21,10 +21,10 @@
 
 @keyframes snowfall {
   0% {
-    transform: translate3d(var(--left-ini), 0, 0);
+    transform: translate3d(var(--snow-left-ini), 0, 0);
   }
   100% {
-    transform: translate3d(var(--left-end), 370px, 0);
+    transform: translate3d(var(--snow-left-end), 370px, 0);
   }
 }
 

@@ -39,10 +39,8 @@ function App() {
         <header>
           <h1>KFR challenge Weather app</h1>
         </header>
-        <span>Location</span>
         <LocationSelector onSetLocation={setCurrentWoeid} />
         <WeatherBox forecast={currentForecast} date={currentDate} />
-        <span>Forecast</span>
         <DaySelector
           currentDate={currentDate}
           forecastDaysData={currentForecast?.consolidated_weather}

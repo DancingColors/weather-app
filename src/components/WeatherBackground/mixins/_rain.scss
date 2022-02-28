@@ -15,9 +15,6 @@
 
     @for $i from 1 through 20 {
       > div:nth-child(#{$i}) {
-        --size: #{random(8) + 5}px;
-        --left-ini: #{random(360) - 100}px;
-        --left-end: #{random(360) - 100}px;
         left: #{random(360)}px;
         animation: rainfall #{1 + random(10) * 0.01}s linear infinite;
         animation-delay: -#{random(20)}s;

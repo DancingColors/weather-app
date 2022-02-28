@@ -13,8 +13,8 @@
     @for $i from 1 through 20 {
       > div:nth-child(#{$i}) {
         --size: #{random(8) + 5}px;
-        --left-ini: #{random(360) - 100}px;
-        --left-end: #{random(360) - 100}px;
+        --snow-left-ini: #{random(360) - 100}px;
+        --snow-left-end: #{random(360) - 100}px;
         left: #{random(100)}px;
         animation: snowfall #{5 + random(10)}s linear infinite;
         animation-delay: -#{random(10)}s;
